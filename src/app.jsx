@@ -1,4 +1,4 @@
-import { productDetails } from './productDetails';
+import { productDetails } from './app/productDetails';
 
 export function app() {
   return (

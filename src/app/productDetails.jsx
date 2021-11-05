@@ -4,7 +4,7 @@ import {productReview} from '../models/productReview';
 import { reviewForm } from './reviewForm';
 import { reviewList } from './reviewList';
 
-export class productDetails extends React.Component {
+class productDetails extends React.Component {
     state = {
         product : new product (
             1,
@@ -16,9 +16,8 @@ export class productDetails extends React.Component {
        )
     };
     render(){
-        return <>
+        return(
         <div className="container">
-            <nav></nav>
             <div className="product-content">
                 <h1>{this.product.name}</h1>
                 <img src={this.product.imageUrl}/>
@@ -28,6 +27,6 @@ export class productDetails extends React.Component {
             <reviewList/>
             <reviewForm/>
         </div>
-        </>
+        )
     }
-}
+} export default productDetails;
