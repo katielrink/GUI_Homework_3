@@ -23,14 +23,18 @@ export class ProductDetails extends React.Component {
         reviews.push(review);
         this.setState({ reviews });
     }
+
     render(){
         return <>
-            <nav>Breadcrumbs</nav>
-            <Jumbotron>
+            <nav className="navBar">
+                <a href="http://localhost:3000/" >Tasty snacks</a>
+                <span id="breadcrumbProductName"> {" / " + this.state.displayProduct.name}</span>
+            </nav>
+            <Jumbotron className="mainInfo">
+                <img className="productImage" src={this.state.displayProduct.imageUrl} />
                 <h1>{this.state.displayProduct.name}</h1>
-                <img src={this.state.displayProduct.imageUrl} />
-                <Badge>{this.state.displayProduct.price}</Badge>
-                <p>{this.state.displayProduct.description}</p>
+                <Badge className="priceB badge-primary">{"$" + this.state.displayProduct.price}</Badge>
+                <p className="description">{this.state.displayProduct.description}</p>
             </Jumbotron>
             <ReviewList reviews={this.state.displayProduct.reviews} />
             <ReviewForm addReview={review => this.addReview(review)}/>

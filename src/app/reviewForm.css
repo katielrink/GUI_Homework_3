@@ -1,0 +1,62 @@
+.form {
+    border-radius: 0.5em;
+    padding: .2em;
+    border: 0.1em solid #c8cccf;
+    margin-top: 1em;
+    overflow: hidden;
+}
+
+.reviewTitle {
+    background-color: #858e97;
+    color: white;
+    padding: 0.5em 0.5em 0.5em 1em;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    height: 2em;
+    border-radius: 0.25em;
+    border-width: 0.05em;
+    border-color: #c8cccf;
+}
+
+.together{
+    display: inline-block;
+}
+
+.label{
+    display: block;
+}
+
+
+.Rating {
+    height: 2em;
+    width: 30%;
+    border-radius: 0.25em;
+    border-width: 0.05em;
+    margin-right: 1em;
+    border-color: #c8cccf;
+}
+
+.label {
+    font-weight: lighter;
+    font-size: smaller;
+    margin: 0.25em;
+}
+
+.comment {
+    height: 7.5em;
+    width: 100%;
+    border-radius: 0.25em;
+    border-width: 0.05em;
+    border-color: #c8cccf;
+}
+
+.btn {
+    background-color: #0074fd;
+    margin-top: 1em;
+    color: white;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    border: none;
+}

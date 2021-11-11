@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Product } from '../models/product';
 import { ProductReview } from '../models/productReview';
 import { Rating } from './rating';
+import "./reviewForm.css"
 
 export class ReviewForm extends React.Component {
     state = {
@@ -13,7 +14,6 @@ export class ReviewForm extends React.Component {
 
     onAddClick() {
         var dt = new Date();
-        window.alert(this.state.userName + " " + this.state.rating);
         var review = new ProductReview(this.state.userName, this.state.rating, this.state.comment, dt);
         this.props.addReview(review);
         this.setState({
@@ -26,19 +26,18 @@ export class ReviewForm extends React.Component {
     render(){
         return <>
             <div className="form">
-                <h3>Add Review</h3>
+                <h3 className="reviewTitle">Add Review</h3>
                 <form>
-                    <h4>Name:</h4>
+                    <label className="label together">Name:</label>
                     <input
                         type="text"
-                        name="name"
+                        className="name together"
                         id="name"
-                        className="form-control"
-                        value={this.state.username}
+                        value={this.state.userName}
                         onChange={event => this.setState({ userName: event.target.value })} />
-                    <h4>Rating:</h4>
+                    <label className="label together">Rating:</label>
                     <select
-                        name="Rating"
+                        className="Rating together"
                         id="Rating"
                         value={this.state.rating}
                         onChange={event => this.setState({ rating: event.target.value })}>
@@ -47,18 +46,18 @@ export class ReviewForm extends React.Component {
                             [1, 2, 3, 4, 5].map((x, i) => <option key={i}>{x + " Star(s)"}</option>)
                         }
                     </select>
-                    <Rating value={this.state.rating[0]} />
-                    <h4>Comment:</h4> 
+                    <Rating className="together" value={this.state.rating[0]} />
+                    <h4 className="label">Comment:</h4> 
                     <input
                         type="text-area"
-                        name="comment"
+                        className="comment"
                         id="comment"
                         value={this.state.comment}
                         onChange={event => this.setState({ comment: event.target.value })} />
                 </form>
                 <button
                     type="button"
-                    className="btn btn-success btn-block"
+                    className="btn btn-success"
                     onClick={() => this.onAddClick()}>
                     Submit
                 </button>
