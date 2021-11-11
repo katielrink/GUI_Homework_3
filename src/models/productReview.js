@@ -1,4 +1,4 @@
-export class productReview {
+export class ProductReview {
     constructor(userName, rating, comment, date) {
         this.userName = userName;
         this.rating = rating;

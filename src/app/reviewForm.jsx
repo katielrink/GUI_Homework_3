@@ -1,59 +1,67 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { Product } from '../models/product';
+import { ProductReview } from '../models/productReview';
+import { Rating } from './rating';
 
-export class reviewForm extends React.Component {
+export class ReviewForm extends React.Component {
     state = {
         userName: '',
         rating: '',
         comment: '',
-        date: ''
     };
 
-    onAddClick(){
-        this.props.onReviewAdded(this.state);
+    onAddClick() {
+        var dt = new Date();
+        window.alert(this.state.userName + " " + this.state.rating);
+        var review = new ProductReview(this.state.userName, this.state.rating, this.state.comment, dt);
+        this.props.addReview(review);
         this.setState({
             userName: '',
             rating: '',
             comment: '',
-            date: ''
         });
     }
 
     render(){
         return <>
             <div className="form">
-                <div className="rating-input">
-                    <select
-                        name="number"
-                        id="rating"
-                        className="form-control"
-                        value={this.state.review}
-                        onChange={event=>this.setState({review: event.target.value})}
-                    >
-                        <option>1 Star</option>
-                        <option>2 Star</option>
-                        <option>3 Star</option>
-                        <option>4 Star</option>
-                        <option>5 Star</option>
-                    </select>
-                </div>
-                <div className="form-input">
+                <h3>Add Review</h3>
+                <form>
+                    <h4>Name:</h4>
                     <input
-                        userName="text"
-                        rating="number"
-                        comment="text"
-                        date="date"
+                        type="text"
+                        name="name"
+                        id="name"
                         className="form-control"
-                        value={this.state.review}
-                        onChange={event => this.setState({review:event.target.value})}
-                    />
-                </div>
-                <div className="form-input">
-                    <button
-                        type="button"
-                        className="btn btn-success btn-block"
-                        onClick={()=> this.onAddClick()}>
-                    </button>
-                </div>
+                        value={this.state.username}
+                        onChange={event => this.setState({ userName: event.target.value })} />
+                    <h4>Rating:</h4>
+                    <select
+                        name="Rating"
+                        id="Rating"
+                        value={this.state.rating}
+                        onChange={event => this.setState({ rating: event.target.value })}>
+                        <option></option>
+                        {
+                            [1, 2, 3, 4, 5].map((x, i) => <option key={i}>{x + " Star(s)"}</option>)
+                        }
+                    </select>
+                    <Rating value={this.state.rating[0]} />
+                    <h4>Comment:</h4> 
+                    <input
+                        type="text-area"
+                        name="comment"
+                        id="comment"
+                        value={this.state.comment}
+                        onChange={event => this.setState({ comment: event.target.value })} />
+                </form>
+                <button
+                    type="button"
+                    className="btn btn-success btn-block"
+                    onClick={() => this.onAddClick()}>
+                    Submit
+                </button>
             </div>
         </>;
     }

@@ -1,7 +1,6 @@
-import { productDetails } from './app/productDetails';
+import React from 'react';
+import { ProductDetails } from './app/productDetails';
 
-export function app() {
-  return (
-      <productDetails />
-  );
+export function App() {
+    return <ProductDetails/>;
 }
