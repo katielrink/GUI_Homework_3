@@ -10,10 +10,10 @@ export const ProductList = prop => {
     
     useEffect(() => {
         productRepository.getProducts().then(x => setProducts(x));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     let onSelect = id => {
-        
+
     }
 
     let onAddToCart = id => {
@@ -31,7 +31,12 @@ export const ProductList = prop => {
                 <div class="card-body">
                     <h3>{product.name}</h3>
                     <Badge className="priceB badge-primary">{"$" + product.price}</Badge>
-                    <button className="btn btn-primary btn-block" onClick={ () => onSelect({product.id}) }>More Details</button>
+                    <Link to="/products/:${product.id}" className="btn btn-sm btn-success mt-3">Product Details</Link>
+                    <button type="button"
+                            onClick={ () => onAddToCart(product.id) }
+                            className="btn btn-block btn-primary">
+                        Add to Cart
+                    </button>
                 </div>
             </Card>
         </li>)

@@ -3,7 +3,7 @@ import { ProductDetails } from "./app/productDetails";
 import { MyCart } from "./app/myCart";
 
 export const ROUTES = [
-    { path: '/', exact: true, component: ProductList },
-    { path: '/cart', component: MyCart },
-    { path: '/products/:productId', component: ProductDetails }
+    { path: '/', exact: true, element: < ProductList / > },
+    { path: '/cart', element: < myCart / > },
+    { path: '/products/:productId', element: < ProductDetails / > }
 ];
