@@ -7,16 +7,6 @@ import { ReviewForm } from './reviewForm';
 import { ReviewList } from './reviewList';
 
 export class ProductDetails extends React.Component {
-        state = {
-            displayProduct: new Product(
-                1,
-                "Jif Peanut Butter, 40 ounce",
-                "7g of Protein per serving with no preservatives, artifical flavors or colors.",
-                7.99,
-                "https://johnlawrimore.com/smu/101.png",
-                []
-            )
-        };
 
     addReview(review) {
         var reviews = this.state.displayProduct.reviews;
@@ -26,10 +16,6 @@ export class ProductDetails extends React.Component {
 
     render(){
         return <>
-            <nav className="navBar">
-                <a href="http://localhost:3000/" >Tasty snacks</a>
-                <span id="breadcrumbProductName"> {" / " + this.state.displayProduct.name}</span>
-            </nav>
             <Jumbotron className="mainInfo">
                 <img className="productImage" src={this.state.displayProduct.imageUrl} />
                 <h1>{this.state.displayProduct.name}</h1>

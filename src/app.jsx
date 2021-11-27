@@ -1,6 +1,13 @@
 import React from 'react';
-import { ProductDetails } from './app/productDetails';
+import { ROUTES } from './routes';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {ProductList} from './app/productList'
+import './app.css';
 
 export function App() {
-    return <ProductDetails/>;
+    return (
+        <>
+            <ProductList></ProductList>
+        </>
+    );
 }

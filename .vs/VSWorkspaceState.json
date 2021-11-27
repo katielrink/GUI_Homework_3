@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app"
+    "\\src\\api",
+    "\\src\\app",
+    "\\src\\models",
+    "\\src\\services"
   ],
-  "SelectedNode": "\\src\\index.jsx",
+  "SelectedNode": "\\src\\app\\productList.jsx",
   "PreviewInSolutionExplorer": false
 }
