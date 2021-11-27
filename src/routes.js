@@ -4,6 +4,6 @@ import { MyCart } from "./app/myCart";
 
 export const ROUTES = [
     { path: '/', exact: true, element: < ProductList / > },
-    { path: '/cart', element: < myCart / > },
+    { path: '/cart', element: < MyCart / > },
     { path: '/products/:productId', element: < ProductDetails / > }
 ];

@@ -5,3 +5,4 @@ export class CartItem {
         this.totalPrice = totalPrice;
     }
 }
+export default CartItem;

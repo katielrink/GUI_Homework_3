@@ -1,5 +1,5 @@
 import Cart from './../models/cart';
-import CartItem from './../models/cartItem';
+import CartItem from './../models/cartitem';
 
 export class CartService {
     getCart() {
