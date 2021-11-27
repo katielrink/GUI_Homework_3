@@ -6,8 +6,8 @@ import {Header} from './app/header'
 export function App() {
   return (
     <>
-    <Header/>
       <Router>
+        <Header/>
         <Routes>    
           {
             ROUTES.map((route, index) => <Route key={index} { ...route } />)
