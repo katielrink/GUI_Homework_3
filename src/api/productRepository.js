@@ -32,10 +32,10 @@ export class ProductsRepository {
         });
     }
 
-
-    addReview(productId, review) {
+    addReview(id, Review) {
+        window.alert(`${this.url}/${id}/reviews`);
         return new Promise((resolve, reject) => {
-            axios.put(`${this.url}/${productId}/reviews`, review, this.config)
+            axios.post(`${this.url}/${id}/reviews`, Review, this.config)
                 .then(x => resolve(x.data))
                 .catch(x => {
                     alert(x);

@@ -6,15 +6,16 @@ export const MyCart = props => {
         const cartService = new CartService();
         const cart = cartService.getCart();
 
-        return <table className="table table-condensed table-striped">
-        <thead>
-            <tr>
-                <th>Quantity</th>
-                <th>Product</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
+        return <>
+            <table className="table table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>Quantity</th>
+                    <th>Product</th>
+                    <th>Total</th>
+                  </tr>
+            </thead>
+             <tbody>
             {
                 cart.items.map((cartItem) => <tr key={cartItem.product.name}>
                     <td>{ cartItem.quantity}</td>
@@ -22,6 +23,8 @@ export const MyCart = props => {
                     <td>{ cartItem.product.price }</td>
                 </tr>)
             }
-        </tbody>
-    </table>
+            </tbody>
+            </table>
+            <span className="total">${cart.total}</span>
+        </>
 }

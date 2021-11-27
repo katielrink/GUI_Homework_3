@@ -1,7 +1,8 @@
 import '../index.css'
 import React, { useState, useEffect } from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Button, Jumbotron } from 'react-bootstrap';
 import { Badge } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Product } from '../models/product';
 import {ProductReview} from '../models/productReview';
 import { ReviewForm } from './reviewForm';
@@ -32,8 +33,15 @@ export const ProductDetails = prop => {
     }
 
     return <>
+        <nav  className="navbar">
+            <Link to={ `/` }>Tasty Treats</Link>
+            <span>/ {product.name}</span>
+        </nav>
         <Jumbotron className="mainInfo">
             <img className="productImage" src={product.imageUrl} />
+            <Link to={ `/cart` } >
+                        <Button className="btn btn-sm btn-success mt-3" onClick = {() => cartService.addToCart(product)}>Add To Cart</Button>
+            </Link>
             <h1>{product.name}</h1>
             <Badge className="priceB badge-primary">{"$" + product.price}</Badge>
             <p className="description">{product.description}</p>

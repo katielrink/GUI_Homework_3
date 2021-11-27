@@ -13,9 +13,28 @@ code {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
-.navBar {
+.header {
+    margin: 0;
+    padding: 0.75em;
+    color: white !important;
+    background-color: darkgrey;
+    border-radius: 0.25em;
+    font-weight: light;
+    font-style: bolder;
+}
+
+.total {
+    float: right;
+    font-weight: bolder;
+    padding-right: 5em !important;
+}
+
+.navbar {
+    display: inline-block !important;
+    width: 100%;
     margin: 0;
     padding: 0.75em;
     background-color: #e9ecee;
@@ -23,6 +42,27 @@ a {
     font-weight: light;
     font-style: normal;
     font-size: smaller;
+}
+
+li {
+    display: inline-block;
+    margin: 2em;
+}
+
+.btn-cart {
+    background-color: teal !important;
+    width: 20em;
+}
+
+.btn-product {
+    background-color: orange !important;
+    color: white !important;
+    width: 20em;
+}
+
+.card {
+    width: 20em !important;
+    display: inline-block;
 }
 
 .mainInfo {
@@ -125,4 +165,3 @@ li {
     font-size: smaller;
     display: inline;
 }
-

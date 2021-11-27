@@ -20,20 +20,24 @@ export const ProductList = prop => {
         return <div>Loading...</div>
     }
 
-    return <ul className = "list">{
+    return <>
+        <Link to={ `/` } className="navbar">Tasty Treats</Link>
+        <ul className = "list">{
         products.map(product => <li key={product.id}>
-            <Card>
-                <Card.Img src={product.imageUrl}/>
+            <Card class="col card h-20">
+                <Card.Img className="list-img" src={product.imageUrl}/>
                 <div className="card-body">
-                    <h3>{product.name}</h3>
                     <Badge className="priceB badge-primary">{"$" + product.price}</Badge>
-                    <Link to={ `products/${product.id}` } className="btn btn-sm btn-success mt-3">Product Details</Link>
+                    <h3>{product.name}</h3>
+                    <Link to={ `products/${product.id}` } className="btn btn-product btn-sm btn-success mt-3">Product Details</Link>
+                    <br/>
                     <Link to={ `cart` } >
-                        <Button className="btn btn-sm btn-success mt-3" onClick = {() => cartService.addToCart(product)}>Add To Cart</Button>
+                        <Button className="btn btn-cart btn-sm btn-success mt-3" onClick = {() => cartService.addToCart(product)}>Add To Cart</Button>
                     </Link>
                 </div>
             </Card>
         </li>)
-    }</ul>
+        }</ul>
+    </>
 }
 
