@@ -4,6 +4,7 @@ import { Badge } from 'react-bootstrap';
 import { ProductsRepository } from "../api/productRepository";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { CartService} from '../services/cartService';
+import { Button } from 'react-bootstrap'; 
 
 export const ProductList = prop => {
     const [products, setProducts] = useState(undefined);
@@ -27,9 +28,9 @@ export const ProductList = prop => {
                     <h3>{product.name}</h3>
                     <Badge className="priceB badge-primary">{"$" + product.price}</Badge>
                     <Link to={ `products/${product.id}` } className="btn btn-sm btn-success mt-3">Product Details</Link>
-                    <Link to={ `cart` } className="btn btn-sm btn-success mt-3">
-                        <span onClick={cartService.addToCart(product)}>Add To Cart</span>
-                     </Link>
+                    <Link to={ `cart` } >
+                        <Button className="btn btn-sm btn-success mt-3" onClick = {() => cartService.addToCart(product)}>Add To Cart</Button>
+                    </Link>
                 </div>
             </Card>
         </li>)
