@@ -34,7 +34,9 @@ export class ProductsRepository {
 
     addReview(id, Review) {
         window.alert(`${this.url}/${id}/reviews`);
+        window.alert(Review.data);
         return new Promise((resolve, reject) => {
+            //            axios.post(`${this.url}/${id}/reviews`, Review, this.config)
             axios.post(`${this.url}/${id}/reviews`, Review, this.config)
                 .then(x => resolve(x.data))
                 .catch(x => {

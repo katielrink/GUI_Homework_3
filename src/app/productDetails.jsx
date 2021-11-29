@@ -24,8 +24,11 @@ export const ProductDetails = prop => {
     }, []);
 
 
-    let  addReview = review => {
-        productRepository.addReview(id, review);
+    let addReview = review => {
+        var reviews = product.reviews;
+        reviews.push(review);
+
+        productRepository.addReview(product.id, review);
     }
 
     if (!product) {
